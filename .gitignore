@@ -10,7 +10,11 @@ user_guide_src/cilexer/build/*
 user_guide_src/cilexer/dist/*
 user_guide_src/cilexer/pycilexer.egg-info/*
 
-#codeigniter 3
+#codeigniter 
+__private/api/1.0/config/config.php
+__private/api/1.0/config/database.php
+uploads/*
+api/index.php
 application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
