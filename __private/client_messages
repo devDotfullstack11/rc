@@ -1,0 +1,22 @@
+[6:50 AM, 6/29/2021] Harjeet Vlogic: On this screen here. Can we change History Payout to “Reward History” and move it down. In its place can we have a box that says “Tree Bank”
+[6:51 AM, 6/29/2021] Harjeet Vlogic: Just text. The members can contribute with the top button “Contribute” and purchase trees planted. Two options. 
+
+1.) Plant a tree in Canada ($2.99 + GST) 
+And
+2.) Plant a tree in a Canadian protection project (goes to tree bank) ($47.62 + gst) 
+
+This way they can send in their contribution and load their “Tree Bank” below. They can have their all payment options here including the etransfer option and could send their contribution in advance.
+[6:51 AM, 6/29/2021] Harjeet Vlogic: The admin would then credit their account when the etransfer was received.
+[6:51 AM, 6/29/2021] Harjeet Vlogic: On the draw if they hit check out, it would say, “Pay with tree bank”, instead of pay with credit
+
+
+===
+When they pay by etransfer, the app would say, “please send your etransfer to rmrcp1@outlook.com and enter receipt number “xxxxxxxx” Thank you for your support.” The app would generate a receipt number and the admin app just needs to have a spot for etransfer orders. The admin would then receive the etransfer and match the receipt number and load there “Tree Bank” accordingly. If the app can do this automatically that would be great but we can do etransfers manually.
+==
+
+
+[7:11 PM, 7/1/2021] Harjeet: okay, once you confirm then we will read the documentation
+[7:12 PM, 7/1/2021] Harjeet: Also, we need to check whether it supports to e-transfer or not
+[7:23 PM, 7/1/2021] Chris: Etransfer is fine to build in as an option. The admins will manually accept etransfers and load the “Tree Bank”
+[7:24 PM, 7/1/2021] Chris: The app just needs to generate a random code (receipt number) for the person to include in notes. This code will match in the app and in the transfer.
+
