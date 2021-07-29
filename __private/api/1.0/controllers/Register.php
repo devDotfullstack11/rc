@@ -46,6 +46,10 @@ class Register extends My_Controller {
 				'field' => 'confirm_password',
 				'label' => 'Confirm Password',
 				'rules' => 'trim|required|matches[password]'
+			],[
+				'field' => 'is_host',
+				'label' => 'Is Host',
+				'rules' => 'trim|required'
 			]
         ];
         
@@ -57,13 +61,13 @@ class Register extends My_Controller {
         
 		if($this->form_validation->run() == TRUE){
             $postData = $this->input->post();            
-            $chkEmail = $this->Common_m->get('rc_users', ['email' => $postData['email'],'is_host' => 0], -1, true);
+            $chkEmail = $this->Common_m->get('rc_users', ['email' => $postData['email'],'is_host' => isset($postData['is_host']) ? $postData['is_host'] : 0], -1, true);
             //print_r($chkEmail);
             $addCustomer = [
                 'name' => $postData['name'],
                 'email' => $postData['email'],
                 'password' => md5($postData['password']),
-                'is_host' => 0,
+                'is_host' => isset($postData['is_host']) ? $postData['is_host'] : 0,
                 'status' => 1
             ];
 			if(!empty($chkEmail)){

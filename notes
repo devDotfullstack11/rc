@@ -1,0 +1,238 @@
+Priority ::
+
+
+- change password.
+
+
+
+
+==============
+MAKE CHANGES WHEN LIVE
+user/rewards // CORRECT DATES
+api/groups/my_groups // add user clause.
+
+==============
+
+prabh_96 /  96@prabhbhullar 
+
+sec : gabhar
+
+=======
+FTP DETAILS ::
+Yw19-#8.Oe$)
+
+
+FTP Username: developer@timberwildernessproducts.ca
+FTP server: ftp.timberwildernessproducts.ca
+FTP & explicit FTPS port:  21
+======
+
+mysql user password :
+DB: timberwi_reforestration_canada
+User: timberwi_reforestration_canada
+a8agn(#&@-nJ
+
+========
+Pending Tasks ::
+- forgot password API :: 3 - done
+- site short rules api - 3
+- tree planted : 4
+  - number of tree planted.
+  - tree drive wise tree plantations.
+- total credit screen 6
+  - total credit amount : $30
+- about us 2
+- Home :: 
+    - how many trees planted.
+    - credit
+    - Groups listing
+       - groups details
+          - tree drive listing
+            - Tree Drive Details : 4
+            - image
+            - Treedrive short code.
+            - title
+                      - prizes  can be more multiple.
+            - description
+            - rules (can be multiple) -4
+            - short rules long rules             
+            - tree drive information -4
+                  - tree type
+                  - info_image
+                  - info title
+                  - infor description. 
+            - available slots-4
+            - book a slot - 20
+- Announcements 2
+
+- tree drive slots API 4
+- tree drive select slot and process for payment - 10
+- notifications 2
+-Profile 6
+  - name
+  - email
+  - photo
+  - groups
+  - contribute
+  - tree planted
+  - earned
+-Rewards : 8
+  - current points
+  - points detail listing.
+- notification settings : 5
+  - notifications - on/off
+- change password 5
+- help & support -4
+- privacy & policy-4
+- invite friends-10
+- rating & review- 10
+- settings - 
+- history payouts
+- winners screen
+
+
+
+
+
+around - 120
+===========
+User management - 10
+groups management - 20
+tree drive management -25
+payments management - 30
+send notifications- 20
+==========
+- payments DB
+- User slots
+- Draw
+- Send mail to winners.
+
+Payments ???
+redeem ??
+missing screens :
+rating & review 
+settings -
+====================
+DONE ::
+
+
+
+
+========
+
+
+
+
+Done tasks :
+- login API
+- Register API
+- Code setup at cloud
+- Doc Preprated
+- change in response as per app team requirements
+- SMTP setup
+- template settings for forgot password.
+- mail sent on forgot password option.
+- login tested with new password & sheet updated.
+
+Following Backend tasks done today :
+- API endpoint setup at http://timberwildernessproducts.ca/rc_backend
+- DB design for the groups
+- update code over client's server.
+- groups details
+- make group listing changes add favourit key.
+- API for favourite unfavourite groups
+- API for my groups listing
+- tree drive code.
+- number of tree planted
+- project : Qubec
+- contribution Amount.
+INSERT INTO `rc_tree_drive_rules` (`id`, `tree_drive_id`, `rule_text`, `is_question`, `question`, `answer`, `created_at`) VALUES ('3', '1', 'Skill Testing QUestion', '1', '(120 + 24)*(8-7)', '55', CURRENT_TIMESTAMP);
+
+rating api :
+
+
+================
+
+
+
+ALTER TABLE `rc_tree_drives` ADD `is_draw_declared` INT NOT NULL DEFAULT '0' AFTER `draw_date`; 
+ALTER TABLE `rc_users` ADD `role_id` INT NOT NULL DEFAULT '2' AFTER `id`;
+ALTER TABLE `rc_users` ADD `notification_status` INT NOT NULL DEFAULT '0' AFTER `profile_pic`; 
+
+===================
+- Admin Panel Modules ::
+- User management
+- Rules management
+- Groups management
+- Tree drives management
+   - create prizes (multiple)
+   - rules (multiple)
+- host request show to admin.
+
+
+===================
+payment gateway :
+accounting@reforestationcanada.com
+Password: Payment!Timber2021
+
+Ftasks ::
+
+
+
+
+=======
+Next Plan :
+
+- user can send request for hosting a tree drive contest -done
+- host can create groups - done
+- host can create tree drive - 
+
+- tree drive listing created by him - 
+- group listing created by him
+- group add /update/delete
+- tree drive add/ update / delete.
+- create short code for tree drive.
+- in host's own tree drives, he can click on the spot to refund..
+- we will store payments against each spot.
+- Trees planted in all groups, sort by group , month year all.
+- Create draw: host can create draw from app
+- completed draws sort by month year or all.
+
+- admin group reviews
+- admin tree drive reviews.
+- logic as per calculation.
+
+
+
+- question values with farmule
+- accouncement API.
+  image
+  Group 
+  subtitle
+  description
+  tree drive count.  
+- Notification API :  
+- Notification Settings for push notificatain :
+- reference_code in profile - done
+- minis listing
+- minis spots listing.
+- tree planted count in
+
+------
+data in rewards api.
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+

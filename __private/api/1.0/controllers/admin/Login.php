@@ -36,6 +36,7 @@ class Login extends MY_Controller {
 		        $this->form_validation->set_rules('password', 'Password', 'trim|required');
 		        $this->form_validation->set_rules('device_id', 'Device ID', 'trim|required');
 		        $this->form_validation->set_rules('device_type', 'Device Type', 'trim|required');
+		        $this->form_validation->set_rules('is_host', 'is_host', 'trim|required');
 				if($this->form_validation->run() == FALSE) {
                         $data['error'] = str_replace("\n", ' ', strip_tags(validation_errors()));
 			        	$this->sendResponse($data, 204, $extra_flag);
@@ -45,7 +46,7 @@ class Login extends MY_Controller {
 					$cond = [
 						'email' => $postData['email'],
 						'status != ' => 2,
-						'is_host' => 1
+						'is_host' => $postData['is_host']
 					];
 					$customerInfo = $this->Common_m->get("rc_users",$cond, -1, true);
 					if(!empty($customerInfo)){

@@ -36,6 +36,7 @@ class Login extends MY_Controller {
 		        $this->form_validation->set_rules('password', 'Password', 'trim|required');
 		        $this->form_validation->set_rules('device_id', 'Device ID', 'trim|required');
 		        $this->form_validation->set_rules('device_type', 'Device Type', 'trim|required');
+		        ///$this->form_validation->set_rules('is_host', 'is_host', 'trim|required');
 				if($this->form_validation->run() == FALSE) {
                         $data['error'] = str_replace("\n", ' ', strip_tags(validation_errors()));
 			        	$this->sendResponse($data, 204, $extra_flag);
@@ -45,7 +46,7 @@ class Login extends MY_Controller {
 					$cond = [
 						'email' => $postData['email'],
 						'status != ' => 2,
-						'is_host' => 0
+						'is_host' => isset($postData['is_host']) ? $postData['is_host'] : 0
 					];
 					$customerInfo = $this->Common_m->get("rc_users",$cond, -1, true);
 					if(!empty($customerInfo)){
@@ -60,7 +61,7 @@ class Login extends MY_Controller {
 								if(!empty($customerInfo['profile_pic'])){
 									$profile_pic = BASE_DOMAIN.'/images/users/'.$customerInfo['profile_pic'];
 								} 
-								$data['customer'] = $this->getUserLoginObj($customerInfo['id']);
+								$data['customer'] = $this->getUserLoginObj($customerInfo['id'],$cond['is_host']);
 
 								
 							} else {
@@ -80,7 +81,8 @@ class Login extends MY_Controller {
 				// }
 			} else if($postData['login_type'] == 'facebook' || $postData['login_type'] == 'facebookmobile'){
 				if(!empty($postData['facebook_id'])){
-					$chkFBCustomer = $this->Common_m->get("rc_users",['facebook_id' => $postData['facebook_id'], 'status != ' => 2], -1, true);
+					$cond =['facebook_id' => $postData['facebook_id'], 'status != ' => 2,'is_host' => isset($postData['is_host']) ? $postData['is_host'] : 0];
+					$chkFBCustomer = $this->Common_m->get("rc_users",$cond, -1, true);
 					if(!empty($chkFBCustomer)){
 
 						if($chkFBCustomer['status'] == 0){
@@ -109,7 +111,7 @@ class Login extends MY_Controller {
 							} 
 							
 							$my_groups = $this->db->get_where("rc_favourite_groups",['user_id' => $chkFBCustomer['id'],'is_favourite' => 1])->result_array();
-                            $data['customer'] = $this->getUserLoginObj($chkFBCustomer['id']);
+                            $data['customer'] = $this->getUserLoginObj($chkFBCustomer['id'],$cond['is_host']);
 
 						
 						}
@@ -121,14 +123,15 @@ class Login extends MY_Controller {
 						if(!empty($postData['email'])){
 							$emailCond = [
 								'email' => $postData['email'],
-								'status' => 1
+								'status' => 1,
+								'is_host' => isset($postData['is_host']) ? $postData['is_host'] : 0
 							];
 							$emailCustInfo = $this->Common_m->get("rc_users",$emailCond, -1, true);
 							if(!empty($emailCustInfo)){
 								//$app_auth_token = $this->_generateAuthToken($emailCustInfo, $postData);
 								$emailSaveArr = ['facebook_id' => $postData['facebook_id'], 'email_verify' => 1 ];
 								/* get facebook image if customer has not set yet. */
-								if(isset($emailCustInfo['profile_pic'])  &&$emailCustInfo['profile_pic']==0){
+								if(isset($emailCustInfo['profile_pic'])  && $emailCustInfo['profile_pic']==0){
 									$fbImgUrl = file_get_contents("https://graph.facebook.com/".$postData['facebook_id']."/picture?width=600&height=600&redirect=false");
 			                        $fbImg = json_decode($fbImgUrl, true);
 			                        if(isset($fbImg['data']['url'])){
@@ -147,7 +150,7 @@ class Login extends MY_Controller {
 									$profile_pic = BASE_DOMAIN.'/images/users/'.$emailCustInfo['profile_pic'];
 								}
 								$my_groups = $this->db->get_where("rc_favourite_groups",['user_id' => $emailCustInfo['id'],'is_favourite' => 1])->result_array();
-								$data['customer']  = $this->getUserLoginObj($emailCustInfo['id']);;
+								$data['customer']  = $this->getUserLoginObj($emailCustInfo['id'],$emailCond['is_host']);;
 
 								
 								$_isCustomerFound =  true;
@@ -168,7 +171,9 @@ class Login extends MY_Controller {
 			} else if($postData['login_type'] == 'google'){
 
 				if(!empty($postData['google_id'])){
-					$chkFBCustomer = $this->Common_m->get("rc_users",['google_id' => $postData['google_id'], 'status != ' => 2], -1, true);
+					
+					$cond = ['google_id' => $postData['google_id'], 'status != ' => 2,'is_host' => isset($postData['is_host']) ? $postData['is_host'] : 0];
+					$chkFBCustomer = $this->Common_m->get("rc_users",$cond, -1, true);
 					if(!empty($chkFBCustomer)){
 
 						if($chkFBCustomer['status'] == 0){
@@ -195,7 +200,7 @@ class Login extends MY_Controller {
 								$profile_pic = BASE_DOMAIN.'/images/users/'.$chkFBCustomer['profile_pic'];
 							}
 							$my_groups = $this->db->get_where("rc_favourite_groups",['user_id' => $chkFBCustomer['id'],'is_favourite' => 1])->result_array();
-                            $data['customer'] =$this->getUserLoginObj($chkFBCustomer['id']);;
+                            $data['customer'] =$this->getUserLoginObj($chkFBCustomer['id'],$cond['is_host']);;
 
 						
 						}
@@ -207,7 +212,8 @@ class Login extends MY_Controller {
 						if(!empty($postData['email'])){
 							$emailCond = [
 								'email' => $postData['email'],
-								'status' => 1
+								'status' => 1 ,
+								'is_host' => isset($postData['is_host']) ? $postData['is_host'] : 0
 							];
 							$emailCustInfo = $this->Common_m->get("rc_users",$emailCond, -1, true);
 							if(!empty($emailCustInfo)){
@@ -226,7 +232,7 @@ class Login extends MY_Controller {
 									$profile_pic = BASE_DOMAIN.'/images/users/'.$emailCustInfo['profile_pic'];
 								}
 								$my_groups = $this->db->get_where("rc_favourite_groups",['user_id' => $emailCustInfo['id'],'is_favourite' => 1])->result_array();
-								$data['customer']  = $this->getUserLoginObj($emailCustInfo['id']);;
+								$data['customer']  = $this->getUserLoginObj($emailCustInfo['id'],$emailCond['is_host']);;
 
 								
 								$_isCustomerFound =  true;
@@ -382,6 +388,7 @@ class Login extends MY_Controller {
 			if(!empty($tokenInfo)){
 				if($tokenInfo['token_type'] == 'register'){
 					/* Mark token as used. */
+					
 					if($this->Common_m->save('customers', ['status' => 1, 'phone_verify' => 1], ['customer_id' => $tokenInfo['customer_id']])){
 
 						/* get customer default currency */
