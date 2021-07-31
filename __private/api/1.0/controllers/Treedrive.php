@@ -280,11 +280,12 @@ class Treedrive extends My_Controller {
     function trees_planted(){
         $postData = $this->input->post(); 
         $extra_flag = 1;
-        $sort_by_field = "";
+        $sort_by_field = $postData['sort_by'];
+        
         $sort_order ="DESC";
         if(!empty($sort_by_field)){
             if($sort_by_field == 'group'){
-                $this->db->order_by("g.title","DESC");
+                $this->db->order_by("g.title","ASC");
             } else if($sort_by_field == 'month'){
                 $this->db->order_by("MONTH(tp.created_at)","DESC");
             } else if($sort_by_field == 'year'){

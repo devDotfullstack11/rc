@@ -31,7 +31,7 @@ $pos = strpos($base_url, 'localhost');
 if($pos === false){
     $callback_base_url = $base_url;     
 } else {
-    $callback_base_url = "http://localhost/ms/rc/rc_backend/admin" ;  
+    $callback_base_url = "http://localhost/ms/git/rc/admin" ;  
 }
 
 

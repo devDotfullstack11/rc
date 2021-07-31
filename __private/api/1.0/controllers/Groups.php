@@ -278,7 +278,7 @@ class Groups extends My_Controller {
         }  
     }
 
-    function deleted(){
+    function delete(){
         $id = $_POST['id'];
         $extra_flag =0;
         if(!empty($id)){

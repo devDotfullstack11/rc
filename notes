@@ -168,6 +168,9 @@ ALTER TABLE `rc_users` ADD `notification_status` INT NOT NULL DEFAULT '0' AFTER 
    - create prizes (multiple)
    - rules (multiple)
 - host request show to admin.
+- Project Management => Each Group will have a Project. (title description image)
+
+
 
 
 ===================
@@ -218,8 +221,15 @@ Next Plan :
 - minis spots listing.
 - tree planted count in
 
-------
+------pp
 data in rewards api.
+
+1. Reports screen not available in desgin.
+2. Complete draws screen not available in list.
+3. which screen we can use for Create draw.
+4. Tree drive detail screen.
+5. Where user click for group rating.
+6. Create and show announcement listing scree
 
 
 

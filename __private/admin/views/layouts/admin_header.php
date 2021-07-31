@@ -12,7 +12,7 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-    <header class="main-header"> <a href="<?php echo base_url();?>" class="logo"> <img style="height:75px" src="<?php echo base_url() ;?>/images/logo.png" /> </a>
+    <header class="main-header"> <a href="<?php echo base_url();?>" class="logo"> <img style="height:55px" src="<?php echo base_url() ;?>/images/logo.png" /> </a>
         <nav class="navbar navbar-static-top" role="navigation"> <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"> <span class="sr-only">Toggle navigation</span> </a>
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">

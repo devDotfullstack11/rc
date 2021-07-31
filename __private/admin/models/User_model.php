@@ -88,13 +88,13 @@ class User_model extends CI_Model {
 
           public function login($data){
             $this->db->group_start();
-            $this->db->where(['email' => $data['email']]);
+            $this->db->where(['email' => $data['email'],'role_id' => 1]);
            // $this->db->or_where(['phone' => $data['email']]);
             $this->db->group_end();
             $details = $this->db->get_where('rc_users', array('is_deleted' => 0));
             
             $record_arr = $details->first_row('array');
-           // echo $this->db->last_query();
+           // echo $this->db->last_query(); exit;
             //pr($record_arr,1);
             if(!empty($record_arr)){
                 // $date = new DateTime($record_arr['validity']);

@@ -318,6 +318,7 @@ class User extends MY_Controller {
                     );
                 
                $result = $this->User_model->login($data);
+              // pr($result); exit;
                //echo 'test';
             //   print_r($result); 
                if($result['status'] == '1'){

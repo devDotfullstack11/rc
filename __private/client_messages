@@ -20,3 +20,52 @@ When they pay by etransfer, the app would say, “please send your etransfer to 
 [7:23 PM, 7/1/2021] Chris: Etransfer is fine to build in as an option. The admins will manually accept etransfers and load the “Tree Bank”
 [7:24 PM, 7/1/2021] Chris: The app just needs to generate a random code (receipt number) for the person to include in notes. This code will match in the app and in the transfer.
 
+=============
+
+
+For the groups listed below, if I clicked on one, “RMR” for example, it would show me which projects these were planted in
+
+This section will show the draws that are full and either require scheduling or have been scheduled. An admin will get notified when a draw is full and it will be added to this area. From here they can schedule a draw time. When they do this it will get added to their announcements.
+
+The way I had invisioned it working was that as soon as a draw filled it would go to the “schedule” screen. From here the admin could click on the draw from a list and select the time the draw will be held at. Once this was done an announcement for this would automatically be generated and on the “Schedule” list a draw time would be shown beside the tree drive. This would be the draw schedule for the admin
+
+The admin would receive a notification when a tree drive was added to the list and requiring scheduling
+
+Trees planted should view like the admin app.
+
+==========
+
+Instead of showing the group though, it only shows which projects trees were planted in.
+
+When you select a group it should then show which projects the trees were planted in.
+
+The tree drives are planting trees in different protection projects
+
+This one you can see was for the Old Growth Management project in Quesnel, BC
+
+On this screen can we add a spot to “Select Protection Project”
+
+The protection project is the project the group is choosing to raise money for
+
+The picture will be different based on which project they pick
+
+=============
+We will add 1 more number to determine page score based on volume. Volume will make up 30% of score. Pages doing below 50k will get 10% 100k+ will get 20% and 200K plus get 30%
+
+
+one person rated the page 100% and 2 people rated the post 100% and one person 25% the calculation would look like this.
+
+100 x 3 + 100 + 100 +25 = 525 / 6 = 87.5%
+
+The page did 100k the previous month. 
+
+87.5% of 70 = 61.25 + 20 = overall score 81.25%
+
+==============
+- API for crm
+
+
+
+
+
+

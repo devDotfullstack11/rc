@@ -84,7 +84,7 @@ defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 //defined('THEME_COLOR')         OR define('THEME_COLOR', '#f07c00'); // highest automatically-assigned error code
-defined('THEME_COLOR')         OR define('THEME_COLOR', '#e30079'); // highest automatically-assigned error code
+defined('THEME_COLOR')         OR define('THEME_COLOR', '#0fe40f'); // highest automatically-assigned error code
 defined('THEME_COLOR_2')         OR define('THEME_COLOR_2', '#009ee0'); // highest automatically-assigned error code f28504
 defined('THEME_COLOR_3')         OR define('THEME_COLOR_3', '#f28504'); // highest automatically-assigned error code 
 $app_path = APPPATH;
